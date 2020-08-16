@@ -1,16 +1,16 @@
 import React from 'react';
-import { Formik } from 'formik';
-
+import {Formik} from 'formik';
 const SignupForm = () => (
     <div>
         <Formik
-            initialValues={{ name: "", holes: "", par: ""}}
+            initialValues={{name: "", holes: "", par: ""}}
             onSubmit={(values, actions) => {
 
                 setTimeout(() => {
                     alert(JSON.stringify(values, null, 2));
                     actions.setSubmitting(false);
                 }, 1000);
+
                 actions.resetForm()
             }}
         >
@@ -25,7 +25,7 @@ const SignupForm = () => (
                         onChange={props.handleChange}
                         value={props.values.name}
                     />
-                    <br />
+                    <br/>
                     <label htmlFor="lastName">Number of Holes </label>
                     <input
                         className="holes"
@@ -35,7 +35,7 @@ const SignupForm = () => (
                         onChange={props.handleChange}
                         value={props.values.holes}
                     />
-                    <br />
+                    <br/>
                     <label htmlFor="par">Course Par </label>
                     <input
                         className="par"
@@ -45,7 +45,7 @@ const SignupForm = () => (
                         onChange={props.handleChange}
                         value={props.values.par}
                     />
-                    <br />
+                    <br/>
                     <button type="submit" className="addSubmit">Add</button>
                 </form>
             )}

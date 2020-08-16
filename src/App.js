@@ -7,7 +7,15 @@ import courseData from "./courseData";
 const courseComponents = courseData.map(course => <Course key={course.id}
                                                           par={course.par}
                                                           holes={course.holes}
-                                                          name={course.name}/>)
+                                                          name={course.name}
+                                                          deleting={false}/>)
+
+const courseComponentsDeleting = courseData.map(course => <Course key={course.id}
+                                                          par={course.par}
+                                                          holes={course.holes}
+                                                          name={course.name}
+                                                          deleting={true}/>)
+
 
 class App extends React.Component {
     constructor() {
@@ -43,7 +51,7 @@ class App extends React.Component {
             <div>
                 <h1 className="title">Untitled Golf App</h1>
                 <div className="courseList">
-                    {courseComponents}
+                    {this.state.deletingCourse ? <React.Fragment>{courseComponentsDeleting}</React.Fragment> : <React.Fragment>{courseComponents}</React.Fragment>}
                 </div>
                 <br/>
                 <div className="buttons">
@@ -53,8 +61,10 @@ class App extends React.Component {
                          Course</button>}
                     <div className="divider"></div>
                     {!this.state.deletingCourse ?
-                     <button className="deleteButton" onClick={this.handleDelete}>Delete Course</button> :
-                     <button className="deleteButtonClicked" onClick={this.handleDelete}>Delete Course</button>}
+                     <button className="deleteButton" onClick={this.handleDelete}>Delete
+                         Course</button> :
+                     <button className="deleteButtonClicked" onClick={this.handleDelete}>Delete
+                         Course</button>}
 
                 </div>
                 {this.state.addingCourse ? <SignupForm/> : <div></div>}
