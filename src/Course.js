@@ -38,6 +38,7 @@ class Course extends React.Component {
         /**
          * Filler method for modify onClick
          */
+        this.props.modify();
     }
 }
 

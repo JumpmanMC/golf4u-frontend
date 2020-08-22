@@ -88,6 +88,22 @@ body {
     box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
 }
 
+.modifySubmit {
+    background-color: grey;
+    border: #282c34;
+    color: white;
+    padding: 8px 12px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 12px;
+    border-radius: 12px;
+}
+
+.modifySubmit:hover {
+    box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+}
+
 .deleteButton {
     background-color: #4CAF50; /* Green */
     color: white;
@@ -115,7 +131,7 @@ body {
 .deletionButton {
     background-color: white;
     color: red;
-    padding: 5px 5px;
+    padding: 10px 10px;
     text-align: center;
     text-decoration: none;
     font-size: 16px;
@@ -130,7 +146,7 @@ body {
 .modifyButton {
     background-color: white;
     color: grey;
-    padding: 5px 5px;
+    padding: 10px 10px;
     text-align: center;
     text-decoration: none;
     font-size: 16px;

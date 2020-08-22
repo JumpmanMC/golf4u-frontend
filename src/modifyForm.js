@@ -1,17 +1,10 @@
 import React from 'react';
 import {Formik} from 'formik';
-const SignupForm = () => (
+const ModifyForm = () => (
     <div>
         <Formik
             initialValues={{name: "", holes: "", par: ""}}
             onSubmit={(values, actions) => {
-                /*
-                fetch(`/api/v1/course`, {
-                    method: 'POST',
-                    body: JSON.stringify(values)
-                })
-
-                 */
                 setTimeout(() => {
                     alert(JSON.stringify(values, null, 2));
                     actions.setSubmitting(false);
@@ -52,10 +45,11 @@ const SignupForm = () => (
                         value={props.values.par}
                     />
                     <br/>
-                    <button type="submit" className="addSubmit">Add</button>
+                    <button type="submit" className="modifySubmit">Modify</button>
                 </form>
             )}
         </Formik>
     </div>
 );
-export default SignupForm
+
+export default ModifyForm
